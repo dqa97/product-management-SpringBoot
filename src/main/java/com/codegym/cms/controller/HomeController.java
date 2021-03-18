@@ -30,7 +30,7 @@ public class HomeController {
     @GetMapping
     public ModelAndView showAllProducts(@PageableDefault(size = 5) Pageable pageable) {
         Iterable<Product> products = iProductService.findAll(pageable);
-        ModelAndView modelAndView = new ModelAndView("list");
+        ModelAndView modelAndView = new ModelAndView("home");
         modelAndView.addObject("productList", products);
         modelAndView.addObject("category", new Category());
         return modelAndView;
@@ -76,7 +76,7 @@ public class HomeController {
         name = "%" + name + "%";
         Page<Product> products = iProductService.findByProductName(name, pageable);
         if (products.getSize() == 0) return new ModelAndView("error.404");
-        ModelAndView modelAndView = new ModelAndView("list");
+        ModelAndView modelAndView = new ModelAndView("home");
         modelAndView.addObject("category", new Category());
         modelAndView.addObject("productList", products);
         return modelAndView;
@@ -86,6 +86,6 @@ public class HomeController {
     public ModelAndView searchByCategoryName(@RequestParam Long id, @PageableDefault(size = 5) Pageable pageable) {
         Page<Product> products = iProductService.findByCategoryName(id, pageable);
         if (products.getSize() == 0) return new ModelAndView("error.404");
-        else return new ModelAndView("list", "productList" , products);
+        else return new ModelAndView("home", "productList" , products);
     }
 }

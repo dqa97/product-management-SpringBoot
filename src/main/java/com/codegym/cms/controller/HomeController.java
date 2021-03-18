@@ -27,7 +27,7 @@ public class HomeController {
         return iCategoryService.findAll();
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ModelAndView showAllProducts(@PageableDefault(size = 5) Pageable pageable) {
         Iterable<Product> products = iProductService.findAll(pageable);
         ModelAndView modelAndView = new ModelAndView("list");

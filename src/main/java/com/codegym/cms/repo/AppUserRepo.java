@@ -1,4 +1,4 @@
-package com.codegym.cms.repo;
-
-public interface AppUserRepo {
-}
+//package com.codegym.cms.repo;
+//
+//public interface AppUserRepo {
+//}

@@ -1,4 +1,4 @@
-package com.codegym.cms.service.appuser;
-
-public interface IAppUserService {
-}
+//package com.codegym.cms.service.appuser;
+//
+//public interface IAppUserService {
+//}

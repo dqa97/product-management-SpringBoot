@@ -19,4 +19,22 @@ public class CategoryController {
         ModelAndView index = new ModelAndView("homepage");
         return index;
     }
+
+    @GetMapping("/admin")
+    public ModelAndView admin(){
+        ModelAndView modelAndView = new ModelAndView("admin");
+        return modelAndView;
+    }
+
+    @GetMapping("/user")
+    public ModelAndView user(){
+        ModelAndView modelAndView = new ModelAndView("user");
+        return modelAndView;
+    }
+
+    @GetMapping("donthaveaccess")
+    public ModelAndView p403(){
+        ModelAndView modelAndView = new ModelAndView("donthaveaccess");
+        return modelAndView;
+    }
 }
